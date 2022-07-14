@@ -41,6 +41,7 @@ int getsize(node *h) {
     node *temp = h;
     int n = 0;
 
+    if (h == NULL) return n;
     while (temp != NULL) {
         temp = temp->next;
         n++;
@@ -61,7 +62,7 @@ void Insert(node* h,int x, int loc) {
         h = boi;
         }
    
-   if( h != NULL && 0< loc < getsize(h)) {
+   else if( h != NULL && 0< loc < getsize(h)) {
         temp = head;
         for (int i=0; i<loc; i++) {
             temp = temp->next;

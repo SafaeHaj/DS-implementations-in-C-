@@ -21,18 +21,16 @@ void PrintQ(queue* q);
 
 int main() {
     node *head, *tail;
-    head->next = tail;
-
-
-    //queue m = {tail,head,0}; queue *q = &m;
+    head = NULL; tail = NULL;
+    queue m = {tail,head,0}; queue *q = &m;
 
     //enqueue(q,1) ;enqueue(q,2) ;enqueue(q,3) ;enqueue(q,4) ;
     
     //PrintQ(q);
+    Insert(head,1,0);
+    Print(head);
 
     //printf("\nIs queue empty: %i", IsEmpty(q));
-
-    Insert(head,1,0);
 
 
     return 0;
