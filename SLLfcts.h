@@ -82,7 +82,7 @@ void Insert(node* h,int x, int loc) {
         printf("\nEmpty List, enter value for head?\n"); scanf("%c",&r);
         if(r == 'y') {
             int val; scanf("%i",&val); 
-            Insert(h,val,0);
+            head->data = val;
         }
    }
 }
