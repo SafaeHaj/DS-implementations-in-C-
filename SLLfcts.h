@@ -87,16 +87,16 @@ void Insert(node* h,int x, int loc) {
    }
 }
 
-void Remove(int loc) {
+void Remove(node* h, int loc) {
     node *temp, *prev, *nixt;
    
-   if( head != NULL) {
+   if(h != NULL) {
         if (loc == 0) {
-            head = head->next;
+            h = h->next;
         }
 
         else {
-            temp = head;
+            temp = h;
             for (int i=0; i<loc; i++) {
                 prev = temp;
                 temp = temp->next;
