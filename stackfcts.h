@@ -20,7 +20,8 @@ bool IsFull(stack* s) {
 }
 
 int top(stack* s) {
-    return s->arr[s->top];
+    if (IsEmpty(s) == false) return s->arr[s->top];
+    else printf("\nStack is Empty");
 }
 
 int pop(stack* s) {
