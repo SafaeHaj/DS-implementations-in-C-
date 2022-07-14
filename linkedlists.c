@@ -16,17 +16,9 @@ Singly Linked List Structure:
 int main() {
     node *one, *two, *three;
     int x;
-
+/*
     one = malloc(sizeof(node)); two = malloc(sizeof(node)); three = malloc(sizeof(node));
 
-    /* 
-    when dealing with pointers in structures
-    accessing struct elements can be done either by writing:
-    1-  (*pointer).variable = value (forceconvert pointer type)
-    OR
-    2-  pointer->variable = value
-    */
-    
     one->data = 1 ; one->next = two;
     two->data = 2 ; two->next = three;
     three->data = 3; three->next = NULL;
@@ -50,6 +42,13 @@ int main() {
     //Print(head);
     //Sort(head);
     Print(head);
+*/
+
+    node* head2 = NULL;
+    printf("size: %i", getsize(head2));
+    Insert(&head2,1,0);
+    printf("\nsize: %i", getsize(head2));
+
     
     
     return 0;

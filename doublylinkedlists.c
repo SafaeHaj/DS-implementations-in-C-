@@ -10,19 +10,6 @@ Doubly Linked List structure
         } node;
 
 node *head; node *tail;
-
-✨core functions✨ of Doubly Linked Lists
-    int  getel(node* x);
-    void setel(node* x, int val);
-
-    void InsertbHead(int x, int loc);
-    void InsertbTail(int x, int loc);
-
-    void RemovebHead(int x);
-    void RemovebTail(int x);
-
-    void Print(node* start);
-    void ReversePrint(node* start);
 */
 
 int main() {

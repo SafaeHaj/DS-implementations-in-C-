@@ -49,7 +49,7 @@ int getsize(node *h) {
     return n;
 }
 
-void Insert(node* h,int x, int loc) {
+void Insert(node** h,int x, int loc) {
     node *temp, *nixt;
     node* boi = (node*)malloc(sizeof(node));
     
@@ -58,12 +58,12 @@ void Insert(node* h,int x, int loc) {
         if loc == randint the element gets inserted at given location */
    if (loc == 0) {
         boi->data = x;
-        boi->next = h;
-        h = boi;
+        boi->next = *h;
+        *h = boi;
         }
    
-   else if( h != NULL && 0< loc < getsize(h)) {
-        temp = head;
+   else if( *h != NULL && 0< loc < getsize(*h)) {
+        temp = *h;
         for (int i=0; i<loc; i++) {
             temp = temp->next;
             nixt = temp->next;
@@ -73,19 +73,19 @@ void Insert(node* h,int x, int loc) {
         boi->data = x;
         } 
     
-    else printf("\nMa dude watcha tryna do? loc must be between 0 and size of DLL");
+    else printf("\nMa dude watcha tryna do? loc must be between 0 and size of LL");
 }
 
-void Remove(node* h, int loc) {
+void Remove(node** h, int loc) {
     node *temp, *prev, *nixt;
    
-    if(h != NULL) {
+    if(*h != NULL) {
         if (loc == 0) {
-            h = h->next;
+            *h = (*h)->next;
         }
 
         else {
-            temp = h;
+            temp = *h;
             for (int i=0; i<loc; i++) {
                 prev = temp;
                 temp = temp->next;
