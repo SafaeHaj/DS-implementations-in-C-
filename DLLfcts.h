@@ -31,7 +31,7 @@ void setel(node* i, int val) {
 int getsize(node* h) {
     node *temp = h;
     int n=0;
-    
+
     while(temp != NULL) {
         temp = temp->next;
         n++;
@@ -43,54 +43,45 @@ void InsertbHead(int x, int loc) {
     node* temp;
     node* boi = (node*)malloc(sizeof(node));
     
-    if( head != NULL) {
-            if (loc == 0) {
-            boi->data = x;
-            boi->prev = NULL;
-            head->prev = boi;
-            boi->next = head;
-            head = boi;
-        }
-
-        else if (0<loc< getsize(head)){
-            temp = head;
-            for (int i=0; i<loc; i++) {
-                temp = temp->next;
-            }
-            boi->next = temp->next;
-            boi->prev = temp;
-            temp->next->prev = boi;
-            temp->next = boi;
-            boi->data = x;
-        }
-
-        else printf("Ma dude watcha tryna do? loc must be between 0 and size of DLL");
+    if (loc == 0) {
+        boi->data = x;
+        boi->prev = NULL;
+        head->prev = boi;
+        boi->next = head;
+        head = boi;
     }
 
-    else {
-        char r;
-        printf("\nEmpty List, enter value for head?\n"); scanf("%c",&r);
-        if(r == 'y') {
-            int val; scanf("%i",&val); 
-            InsertbHead(val,0);
+    if(head != NULL && 0<loc< getsize(head)) {
+        temp = head;
+        for (int i=0; i<loc; i++) {
+            temp = temp->next;
         }
-   }
-}
+        boi->next = temp->next;
+        boi->prev = temp;
+        temp->next->prev = boi;
+        temp->next = boi;
+        boi->data = x;
+        }
+
+    else printf("Ma dude watcha tryna do? loc must be between 0 and size of DLL");
+    }
 
 void InsertbTail(int x, int loc) {
     node* temp;
     node* boi = (node*)malloc(sizeof(node));
     
-    if( head != NULL) {
-        if (loc == -1) {
-            boi->data = x;
-            tail->next = boi;
-            boi->prev = tail;
-            boi->next = NULL;
-            tail = boi;
+    if (loc == -1) {
+        boi->data = x;
+        tail->next = boi;
+        boi->prev = tail;
+        boi->next = NULL;
+        tail = boi;
         }
+
+    if( head != NULL) {
+
         //loc must be a negative value
-        else if (loc >= -(getsize(head)) && loc < -1){
+        if (loc >= -(getsize(head)) && loc < -1){
             temp = tail;
             for (int i=-1; i>loc; i--) {
                 temp = temp->prev;
