@@ -1,10 +1,9 @@
 // Stack Implementation + Functions
-
-#define cap 20 //capacity of the stack
+#define cap 10
 
 typedef struct STACK{
     int top; //index of top element
-    int arr[cap]; // array
+    int arr[cap]; //array
 } stack;
 
 
@@ -12,12 +11,12 @@ typedef struct STACK{
 
 bool IsEmpty(stack* s) {
     if(s->top == -1) return true;
-    else return false;
+    return false;
 }
 
 bool IsFull(stack* s) {
-    if((s->top) == cap-1) return true;
-    else return false;
+    if((s->top) == (cap-1)) return true;
+    return false;
 }
 
 int top(stack* s) {
@@ -32,6 +31,8 @@ int pop(stack* s) {
 
         return x;
     }
+
+    else printf("\nStack is Empty");
 }
 
 void push(stack* s, int x) {
@@ -40,30 +41,13 @@ void push(stack* s, int x) {
         s->top++;
     }
 
-    else {
-        /*
-        cap = 2*cap; int y;
-        //i originally only wanted the stack->array to be dynamic but that didnt work so whole struct it is
-        //UPDATE: neither works and the only solution i found online was using C++ specific stuff :)))
-
-        stack* new_s = (stack*)(malloc(sizeof(stack)+cap*2)); //int size == 2 bytes
-        
-        while(IsEmpty(s) == false) {
-            y = pop(s);
-            push(new_s,y);
-        }
-        free(s);
-        s = new_s;
-        push(s,x);*/
-        printf("\nERROR: Stack is FULL");
-    }
+    else printf("\nERROR: Stack is Full");
+    //will attempt dynamic array solution in another file
 }
 
 void Print(stack* s) {
     int t;
-    if (IsEmpty(s) == true) {
-        return;
-    }
+    if (IsEmpty(s)) return;
     else {
         t = pop(s);
         printf("%i |",t);
