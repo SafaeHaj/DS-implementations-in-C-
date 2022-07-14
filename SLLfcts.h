@@ -38,8 +38,8 @@ node* findtail(node* h) {
 }
 
 int getsize(node *h) {
-    node *temp =h;
-    int n= 0;
+    node *temp = h;
+    int n = 0;
 
     while (temp != NULL) {
         temp = temp->next;
@@ -55,42 +55,30 @@ void Insert(node* h,int x, int loc) {
     /* Working of loc variable: 
         if loc == 0 the element gets inserted at the beginning
         if loc == randint the element gets inserted at given location */
-   if( h != NULL) {
+   if (loc == 0) {
+        boi->data = x;
+        boi->next = h;
+        h = boi;
+        }
    
-        if (loc == 0) {
-            boi->data = x;
-            boi->next = h;
-            h = boi;
+   if( h != NULL && 0< loc < getsize(h)) {
+        temp = head;
+        for (int i=0; i<loc; i++) {
+            temp = temp->next;
+            nixt = temp->next;
         }
-    
-        else if (0<loc< getsize(head)){
-            temp = head;
-            for (int i=0; i<loc; i++) {
-                temp = temp->next;
-                nixt = temp->next;
-            }
-            boi->next = nixt;
-            temp->next = boi;
-            boi->data = x;
+        boi->next = nixt;
+        temp->next = boi;
+        boi->data = x;
         } 
-
-        else printf("Ma dude watcha tryna do? loc must be between 0 and size of LL");
-   }
-
-   else {
-        char r;
-        printf("\nEmpty List, enter value for head?\n"); scanf("%c",&r);
-        if(r == 'y') {
-            int val; scanf("%i",&val); 
-            head->data = val;
-        }
-   }
+    
+    else printf("\nMa dude watcha tryna do? loc must be between 0 and size of DLL");
 }
 
 void Remove(node* h, int loc) {
     node *temp, *prev, *nixt;
    
-   if(h != NULL) {
+    if(h != NULL) {
         if (loc == 0) {
             h = h->next;
         }
