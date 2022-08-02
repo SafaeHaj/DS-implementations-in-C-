@@ -1,19 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "stackfcts.h"
+#include "stacks.h"
 
 int main()
-{
-    stack staki = {3, {1, 8, 9, 8}};
+{   
+    int i,j;
+    stack staki; staki.top = -1;
     stack *s = &staki;
-    
+
+    printf("Enter stack size (must be between 2 and 20):\n");
+    scanf("%i", &i);
+
+    if (i <= 20 && i >= 2)
+    {
+        printf("Enter stack elements:\n");
+        while (i != 0)
+        {
+            scanf("%i", &j);
+            push(s, j);
+            i--;
+        }
+    }
+    else return 0;
+
     stack han; 
     han.top = -1;
     stack *h = &han;
 
     int xS, xH;
 
+    printf("Initial Stack:\n");
     PrintS(s);
 
     while (IsEmpty(s) == false)
@@ -27,9 +44,8 @@ int main()
         push(h, xS);
     }
 
-    printf("\nHan: ");
+    printf("\nSorted Stack:\n");
     PrintS(h);
-    printf("\n%i", top(h));
 
     // initial idea :
     /*

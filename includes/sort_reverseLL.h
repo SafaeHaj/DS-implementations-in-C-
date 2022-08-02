@@ -1,11 +1,11 @@
 #ifndef SR_LL_H
 #define SR_LL_H
 
-#include "SLLfcts.h"
+#include "linkedlists.h"
 
-void Reverse(node *h)
+void Reverse(node **h)
 {
-    node *temp = h, *prev = NULL, *nixt;
+    node *temp = *h, *prev = NULL, *nixt;
 
     while (temp != NULL)
     {
@@ -14,7 +14,7 @@ void Reverse(node *h)
         prev = temp;
         temp = nixt;
     }
-    head = prev;
+    *h = prev;
 }
 
 // Merge Sort Algorithm

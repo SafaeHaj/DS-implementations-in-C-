@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
-#include "stackfcts.h"
+#include "stacks.h"
 
 int main()
 {

@@ -8,13 +8,13 @@ typedef struct nodey
     struct nodey *next;
 } node;
 
-node *head;
+node* head;
 
 /////////////////////////////////////////////////
 
-int getel(node *x)
+int getel(node *h,node *x)
 {
-    node *temp = head;
+    node *temp = h;
 
     while (temp != x)
     {
@@ -23,11 +23,11 @@ int getel(node *x)
     return temp->data;
 }
 
-void setel(node *i, int val)
+void setel(node *h,node *x, int val)
 {
-    node *temp = head;
+    node *temp = h;
 
-    while (temp != i)
+    while (temp != x)
     {
         temp = temp->next;
     }

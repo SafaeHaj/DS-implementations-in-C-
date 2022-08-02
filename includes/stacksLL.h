@@ -1,7 +1,7 @@
 #ifndef STACKS_LL_H
 #define STACKS_LL_H
 
-#include "SLLfcts.h"
+#include "linkedlists.h"
 
 typedef struct STACK
 {

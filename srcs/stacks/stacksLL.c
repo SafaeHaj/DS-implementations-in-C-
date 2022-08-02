@@ -5,27 +5,26 @@
 
 int main()
 {
+    printf("Initializing Stack..\n");
     node *head = NULL;
     stack stek;
     stek.top = -1;
     stek.stika = head;
     stack *s = &stek;
 
+    printf("Pushing Elements into Stack..\n");
     push(s, 1);
-    printf("\ntop: %i", top(s));
-
     push(s, 2);
-    printf("\ntop: %i ", top(s));
-
     push(s, 3);
-    printf("\ntop: %i", top(s));
-
     push(s, 4);
-    printf("\ntop: %i\n", top(s));
+
+    printf("top: %i\n", top(s));
 
     PrintS(s);
-    pop(s);
-    printf("\n");
+
+    printf("\nPopping Elements from Stack..\n");
+    pop(s); pop(s);
+    
     PrintS(s);
 
     return 0;

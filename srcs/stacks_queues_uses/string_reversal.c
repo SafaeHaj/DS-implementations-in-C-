@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "stackfcts.h"
+#include "stacks.h"
 
 int main() {
-    //reversing a string
-    char str[] = "Hello World!", new_str[20];
+    char str[20], new_str[20];
     int i = 0, j = 0;
     stack ss; ss.top = -1; stack *s = &ss;
 
-    printf("%s\n",str);
+    printf("This program reverses strings using stacks.\n");
+    printf("Enter string input\n");
+    gets(str);
+
+    printf("\nEntered string:\n");
+    puts(str);
 
     while(*(str+i) != '\0') {
         push(s,*(str+i));
@@ -21,7 +25,8 @@ int main() {
         j++;
     }
 
-    printf("%s",new_str);
+    printf("\nReversed String:\n");
+    puts(new_str);
 
     return 0;
 }

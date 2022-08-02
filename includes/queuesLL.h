@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include "SLLfcts.h"
+#include "linkedlists.h"
 
 //using linked list implementation
 
@@ -11,30 +8,7 @@ typedef struct {
     int size;
 } queue;
 
-bool IsEmpty(queue* q);
-int peek(queue* q);
-void dequeue(queue* q);
-void enqueue(queue* q, int x);
-void PrintQ(queue* q);
-
-
-int main() {
-    node *head, *tail;
-    head = NULL; tail = NULL;
-    queue m = {tail,head,0}; queue *q = &m;
-
-    enqueue(q,1) ;enqueue(q,2) ;enqueue(q,3) ;enqueue(q,4) ;
-    
-    PrintQ(q);
-
-    dequeue(q);
-
-    PrintQ(q);
-
-
-    return 0;
-}
-
+/////////////////////////////////////////////////
 
 bool IsEmpty(queue* q) {
     if (q->size == 0) return true;
